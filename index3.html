@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+////copy by value/////
+
+/// here this points to the value ////
+let a  =20
+let b= a
+
+b= 30
+console.log(a)
+console.log(b)
+
+
+///// copy by reference////
+/// this points to the reference and not the actual value////
+
+let obj1 ={name:"Siddharth"}
+
+let obj2 = obj1
+
+ obj2.name = "Boorgu"
+
+ console.log(obj1.name)
+
+
+////shallow copy/////
+//// where changes made to the copy will get reflected to the original copy////
+let obj3 = {name:"Siddharth",age:25,City:{address:"Hyderabad"}}
+
+let obj4 = Object.assign({},obj3)
+
+obj4.City.address = "Chennai"
+
+console.log(obj3)
+
+
+const siddharth = "sid"
+
+const hello = siddharth.includes("i")
+console.log(hello)
+
+///// deep copy////
+//// where changes made to the copied value does not affect the original value/////
+
+
+function insertElement(){
+
+
+    const array  = [1,2,3,4,5]
+    const position  = 1
+
+    for (let i = array.length - 1 ; i >= position ; i--){
+        array[i+1] = array[i]
+        if(i == position){
+            array[i]= 20
+        }
+    }
+    return array
+
+    
+}
+console.log(insertElement())
+function deleteElement(){
+
+    const array = [10,20,30,40,50]
+    const position = 3
+
+    for(let i = position ; i< array.length ;i++){
+        array [i] = array[i+1]
+    }
+    array.length = array.length-1
+    return array
+}
+
+console.log(deleteElement())
+
+function searchElement(){
+    const array = [100,200,300,400,500]
+
+    const element = 300
+    let index;
+
+    for(let i = 0 ; i< element;i++){
+        if(array[i]== element){
+            index= i
+        }
+    }
+    return index
+}
+
+console.log(searchElement())
+
+
+function addAllNumbers(){
+
+const array = [10,5,4,3,2,1]
+let sum = 0
+for(let i = 0 ;i<array.length ; i++){
+    sum= sum + array[i]
+}
+return sum
+
+}
+console.log(addAllNumbers())
+
+
+function greatestNumber(){
+    const array = [1,2,3,4,5]
+    let array1 = array[0]
+
+    for(let i = 0 ; i< array.length;i++){
+        if(array[i]> array1){
+            array1 = array[i]
+        }
+    }
+    return array1
+}
+console.log(greatestNumber())
+
+function UniqueElements(){
+
+    const array = [1,2,3,3,1,5,6]
+    const array1=[]
+
+    for(let i = 0;i<array.length;i++){
+        if(!array1.includes(array[i])){
+            array1.push(array[i])
+        }else{
+            console.log(array[i])
+        }
+    }
+    return array1
+
+}
+
+console.log(UniqueElements())
+
+function evenNumbers(){
+    const array = [1,2,3,4,5,6]
+    const array1=[]
+
+    for(let i = 0 ; i< array.length;i++){
+        if(array[i]%2 == 0){
+            array1.push(array[i])
+        }
+        else{
+            console.log(array[i])
+        }
+    }
+    return array1
+}
+
+console.log(evenNumbers())
+
+function smallestNumber(){
+    const array = [10,1,2,3,4,5,6]
+ let array1 = array[0]
+
+    for(let i = 0;i<array.length;i++){
+        if(array[i]<array1){
+            array1 = array[i]
+        }
+    }
+    return array1
+}
+
+console.log(smallestNumber())
+
+
+function joinStrings(){
+let a = "Siddharth"
+let b = "Boorgu"
+let result = ""
+for(let i = 0 ; i<a.length;i++){
+result = result + a[i]
+}
+
+result = result + " "  /// gap between strings////
+
+for (let j = 0 ;j<b.length;j++){
+    result = result + b[j]
+}
+return result
+
+
+
+}
+
+console.log(joinStrings())
+    </script>
+</body>
+</html>

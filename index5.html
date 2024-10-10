@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function abc(){
+            console.log(a)
+            // console.log(b)
+            // console.log(c)
+
+            var a = 10
+            let b = 20
+            let c = 30
+        }
+        abc()
+        // console.log(b)
+        // let b = 30
+
+
+        ////infinite currying////
+
+        function a(a){
+            return function(b){
+               
+                return function (c){
+                    
+
+                    return function(d){
+                        return a+b+c+d
+                    }
+                }
+            }
+        }
+
+        console.log(a(5)(6)(7)(9))
+
+
+        function a1(a){
+            return function (b){
+                    if(b){
+                        return a1(a+b)
+                    }
+                    return a
+                  
+                    
+            }
+        
+            
+        }
+
+        console.log(a1(5)(7)())
+
+//         function a1(a) {
+//     return function (b) {
+//         if (b) { 
+//             return a1(a + b); 
+//         }
+//         return a; 
+//     }
+// }
+
+// console.log(a1(4)(7)())
+
+
+const result = {
+    total : 0,
+
+    add: function(a){
+       this.total = this.total + a
+       return this
+
+    },
+
+    
+    sub : function(b){
+        this.total = this.total - b
+       return this
+
+},
+    minus: function(c){
+        this.total = this.total - c
+       return this
+
+    },
+    divi: function(d){
+        this.total = this.total * d
+       return this
+
+    }
+}
+
+const result1 = result.add(5).sub(10).minus(10).divi(9)
+console.log(result1.total)
+
+
+
+
+    
+    </script>
+</body>
+</html>
